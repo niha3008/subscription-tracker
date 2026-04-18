@@ -3,10 +3,12 @@
 A full-stack web application to manage and track subscriptions like Netflix, Spotify, etc.
 
 ## Features
-- User authentication (JWT-based login/signup)
+- User authentication (JWT)
 - Add, edit, delete subscriptions
-- Dashboard with analytics (monthly & yearly spend)
-- Responsive UI with hover effects
+- Dashboard with analytics
+- Upcoming renewals tracking
+- Search and filter (category + status)
+- Glassmorphism UI design
 
 ## Tech Stack
 - Frontend: React (Vite)
