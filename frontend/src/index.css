@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #1e1e2f;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #00c6ff;
+}
+
+/* BUTTON */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #00c6ff;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0072ff;
+  transform: scale(1.05);
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* FORM */
+.form-container {
+  max-width: 500px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  width: 100%;
+}
