@@ -32,8 +32,8 @@ const EditSubscription = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Edit Subscription</h2>
+    <div className="page-container">
+      <h1 className="section-title">Edit Subscription</h1>
       {subscription ? (
         <SubscriptionForm
           initialData={subscription}
@@ -41,7 +41,7 @@ const EditSubscription = () => {
           buttonText="Update Subscription"
         />
       ) : (
-        <p>Loading...</p>
+        <p className="muted-text">Loading...</p>
       )}
     </div>
   );

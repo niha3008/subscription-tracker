@@ -43,55 +43,66 @@ const Signup = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Signup</h2>
+    <div className="page-container">
+      <div className="glass-card glass-form">
+        <h1 className="section-title" style={{ marginTop: 0, marginBottom: "10px" }}>
+          Create account
+        </h1>
+        <p className="muted-text" style={{ marginTop: 0, marginBottom: "24px" }}>
+          Start tracking your subscriptions in one place.
+        </p>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p style={{ color: "#ffd6e7", marginBottom: "12px" }}>{error}</p>}
 
-      <form onSubmit={handleSubmit}>
-        <input
-          name="name"
-          placeholder="Name"
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            className="glass-input"
+            name="name"
+            placeholder="Your name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
+          <input
+            className="glass-input"
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
+          <input
+            className="glass-input"
+            name="password"
+            type="password"
+            placeholder="Create password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          name="confirmPassword"
-          type="password"
-          placeholder="Confirm Password"
-          value={form.confirmPassword}
-          onChange={handleChange}
-          required
-        />
+          <input
+            className="glass-input"
+            name="confirmPassword"
+            type="password"
+            placeholder="Confirm password"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            required
+          />
 
-        <button type="submit" className="btn">
-          Signup
-        </button>
-      </form>
+          <button type="submit" className="glass-button" style={{ width: "100%", marginTop: "4px" }}>
+            Sign Up
+          </button>
+        </form>
 
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
+        <p className="muted-text" style={{ marginTop: "18px", textAlign: "center" }}>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
+      </div>
     </div>
   );
 };

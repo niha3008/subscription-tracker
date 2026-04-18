@@ -11,26 +11,58 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <h2>Subscription Tracker</h2>
+    <nav style={styles.wrapper}>
+      <div style={styles.inner} className="glass-card">
+        <h2 style={styles.logo}>Subscription Tracker</h2>
 
-      <div className="nav-links">
-        {user ? (
-          <>
-            <Link to="/dashboard" className="nav-link">Dashboard</Link>
-            <Link to="/subscriptions" className="nav-link">Subscriptions</Link>
-            <Link to="/subscriptions/add" className="nav-link">Add</Link>
-            <button className="btn" onClick={handleLogout}>Logout</button>
-          </>
-        ) : (
-          <>
-            <Link to="/login" className="nav-link">Login</Link>
-            <Link to="/signup" className="nav-link">Signup</Link>
-          </>
-        )}
+        <div style={styles.links}>
+          {user ? (
+            <>
+              <Link to="/dashboard" style={styles.link}>Dashboard</Link>
+              <Link to="/subscriptions" style={styles.link}>Subscriptions</Link>
+              <Link to="/subscriptions/add" style={styles.link}>Add</Link>
+              <button className="glass-button" onClick={handleLogout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" style={styles.link}>Login</Link>
+              <Link to="/signup" style={styles.link}>Signup</Link>
+            </>
+          )}
+        </div>
       </div>
     </nav>
   );
+};
+
+const styles = {
+  wrapper: {
+    padding: "18px 24px 0",
+  },
+  inner: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "18px 24px",
+    borderRadius: "20px",
+  },
+  logo: {
+    margin: 0,
+    color: "#fff",
+    fontSize: "2rem",
+    fontWeight: "700",
+  },
+  links: {
+    display: "flex",
+    alignItems: "center",
+    gap: "20px",
+  },
+  link: {
+    color: "rgba(255,255,255,0.92)",
+    fontSize: "1rem",
+  },
 };
 
 export default Navbar;

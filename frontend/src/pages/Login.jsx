@@ -31,38 +31,47 @@ const Login = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Login</h2>
+    <div className="page-container">
+      <div className="glass-card glass-form">
+        <h1 className="section-title" style={{ marginTop: 0, marginBottom: "10px" }}>
+          Welcome back
+        </h1>
+        <p className="muted-text" style={{ marginTop: 0, marginBottom: "24px" }}>
+          Sign in to continue managing your subscriptions.
+        </p>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p style={{ color: "#ffd6e7", marginBottom: "12px" }}>{error}</p>}
 
-      <form onSubmit={handleSubmit}>
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            className="glass-input"
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
+          <input
+            className="glass-input"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
 
-        <button type="submit" className="btn">
-          Login
-        </button>
-      </form>
+          <button type="submit" className="glass-button" style={{ width: "100%", marginTop: "4px" }}>
+            Log In
+          </button>
+        </form>
 
-      <p>
-        Don’t have an account? <Link to="/signup">Signup</Link>
-      </p>
+        <p className="muted-text" style={{ marginTop: "18px", textAlign: "center" }}>
+          Don’t have an account? <Link to="/signup">Sign Up</Link>
+        </p>
+      </div>
     </div>
   );
 };

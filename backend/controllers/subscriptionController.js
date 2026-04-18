@@ -128,11 +128,28 @@ const getSummary = async (req, res) => {
       }
     });
 
+    const today = new Date();
+
+    const upcomingRenewals = subscriptions
+      .filter((sub) => sub.status === "Active" && new Date(sub.renewalDate) >= today)
+      .sort((a, b) => new Date(a.renewalDate) - new Date(b.renewalDate))
+      .slice(0, 5)
+      .map((sub) => ({
+        _id: sub._id,
+        name: sub.name,
+        category: sub.category,
+        renewalDate: sub.renewalDate,
+        price: sub.price,
+        billingCycle: sub.billingCycle,
+        status: sub.status,
+      }));
+
     res.json({
       totalSubscriptions: subscriptions.length,
       activeSubscriptions: activeCount,
       totalMonthly: Number(totalMonthly.toFixed(2)),
       totalYearly: Number(totalYearly.toFixed(2)),
+      upcomingRenewals,
     });
   } catch (error) {
     res.status(500).json({ message: "Server error" });
